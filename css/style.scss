@@ -1,0 +1,60 @@
+// Import
+// Variables
+// Styling
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+}
+
+.container {
+    position: relative;
+    background: linear-gradient(to bottom, #00D3E6, #005E7C);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.container:hover {
+    animation: none;
+}
+
+.rectangle {
+    position: absolute;
+    border: 2px solid #f2f2f2;
+    opacity: 0.5;
+}
+
+// Functions and keyframes
+@for $i from 1 through 20 {
+    .rec-#{$i} {
+        $size: 210 - ($i * 10);
+        //$color: 70 + ($i * 8);
+        height: $size + px;
+        width: $size + px;
+        //border-color: rgb($color, $color, $color);
+        animation: rotate 10s ease-in-out ($i / 30) + s alternate infinite;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1.3);
+    }
+}
